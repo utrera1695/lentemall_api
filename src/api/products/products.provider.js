@@ -43,7 +43,6 @@ export default {
     try {
       return await ProductModel.find({
         type: type,
-        status: true
       }).exec();
     } catch (error) {
       throw error;
@@ -81,7 +80,7 @@ export default {
           return a.brand;
         });
       brands = brands.length > 1 ? brands.filter((v, i) => brands.indexOf(v) === i) : brands;
-      
+
       return brands
     } catch (error) {
       throw error;
