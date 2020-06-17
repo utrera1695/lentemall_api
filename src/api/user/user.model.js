@@ -26,10 +26,24 @@ const UserModel = Schema({
         type: String,
         default: 'C'
     },
-    referer_id: {type:String},
-    address: {type: String,default:'desconocido'},
-    ci: {type: String,default:'desconocido'},
-    phone: {type: String,default:'desconocido'},
+    /* C: Cliente
+    A: Administrador
+    */
+    referer_id: {
+        type: String
+    },
+    address: {
+        type: String,
+        default: 'desconocido'
+    },
+    ci: {
+        type: String,
+        default: 'desconocido'
+    },
+    phone: {
+        type: String,
+        default: 'desconocido'
+    },
 
 }, {
     timestamps: {

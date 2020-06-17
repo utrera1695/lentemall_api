@@ -82,7 +82,8 @@ router.get('/user/list',
     /* Listar todos los desarrolladores */
     async (req, res) => {
         try {
-            let data = await UserService.ListAllUsers()
+            let role = req.query.role
+            let data = await UserService.ListAllUsers(role)
             res.status(200).send(data)
         } catch (error) {
             console.log(error)

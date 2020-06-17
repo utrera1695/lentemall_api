@@ -83,7 +83,9 @@ export default {
 
     async ListAllUsers() {
         try {
-            return UserModel.find().exec();
+            return UserModel.find({
+                role: role
+            }).exec();
         } catch (error) {
             throw error;
         }
