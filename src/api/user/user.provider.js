@@ -81,7 +81,7 @@ export default {
         }
     },
 
-    async ListAllUsers() {
+    async ListAllUsers(role) {
         try {
             return UserModel.find({
                 role: role
