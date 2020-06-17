@@ -23,7 +23,7 @@ export default {
             }).exec()
             if (!findUser) {
                 body.password = bcrypt.hashSync(body.password, 10);
-                body.referer_id = GetRefererKey(body.firstname, body.lastname)
+                body.referer_id = await GetRefererKey(body.firstname, body.lastname)
                 let user = new UserModel(body);
                 return user.save()
             } else throw {
