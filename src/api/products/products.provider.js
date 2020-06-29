@@ -30,6 +30,13 @@ export default {
       throw error;
     }
   },
+  async Get(id) {
+    try {
+      return await ProductModel.findById(id).exec();
+    } catch (error) {
+      throw error;
+    }
+  },
   async ListAll() {
     try {
       return await ProductModel.find({

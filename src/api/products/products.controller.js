@@ -44,7 +44,18 @@ router.put('/product/change_status',
   }
 )
 
-
+router.get('/product',
+  /* Listar todos los desarrolladores */
+  async (req, res) => {
+    try {
+      let data = await ProductProvider.Get(req.query.id)
+      res.status(200).send(data)
+    } catch (error) {
+      console.log(error)
+      res.status(500).send(error)
+    }
+  }
+)
 router.get('/product/list',
   /* Listar todos los desarrolladores */
   async (req, res) => {
