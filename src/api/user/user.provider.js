@@ -25,7 +25,11 @@ export default {
                 body.password = bcrypt.hashSync(body.password, 10);
                 body.referer_id = await GetRefererKey(body.firstname, body.lastname)
                 let user = new UserModel(body);
-                return user.save()
+                user.save()
+                return {
+                    token: jwt.createToken(user),
+                    role: user.role
+                };
             } else throw {
                 code: 403,
                 error: 'Email already used'
