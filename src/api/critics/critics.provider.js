@@ -23,7 +23,7 @@ export default {
 
   async ListAll() {
     try {
-      return criticsModel.find().exec();
+      return criticsModel.find().populate('user').exec();
     } catch (error) {
       throw error;
     }
