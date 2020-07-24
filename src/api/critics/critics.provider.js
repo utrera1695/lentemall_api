@@ -27,5 +27,14 @@ export default {
     } catch (error) {
       throw error;
     }
+  },
+  async GetByUser(user) {
+    try {
+      return await criticsModel.findOne({
+        user: user
+      }).exec()
+    } catch (error) {
+      throw error
+    }
   }
 };

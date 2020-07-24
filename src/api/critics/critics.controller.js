@@ -29,13 +29,24 @@ router.put('/critics',
   }
 )
 
-
-
 router.get('/critics/list',
   /* Listar todos los desarrolladores */
   async (req, res) => {
     try {
       let data = await criticsProvider.ListAll()
+      res.status(200).send(data)
+    } catch (error) {
+      console.log(error)
+      res.status(500).send(error)
+    }
+  }
+)
+
+router.get('/critics/user',
+  /* Listar todos los desarrolladores */
+  async (req, res) => {
+    try {
+      let data = await criticsProvider.GetByUser(req.query.user)
       res.status(200).send(data)
     } catch (error) {
       console.log(error)
