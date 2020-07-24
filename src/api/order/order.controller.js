@@ -61,7 +61,7 @@ router.get('/order/list/user',
   async (req, res) => {
     try {
       let user = req.query.user
-      let data = await OrderProvider.ListAll(user)
+      let data = await OrderProvider.ListByUser(user)
       res.status(200).send(data)
     } catch (error) {
       console.log(error)
