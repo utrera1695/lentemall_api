@@ -32,6 +32,7 @@ app.use((req, res, next) => {
     next();
 });
 Seeders.SeedAdminUser()
+Seeders.SeedConfig()
 // Routes
 app.use("/", routes);
 
