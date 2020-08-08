@@ -5,7 +5,7 @@ import {
   model
 } from 'mongoose';
 
-const CategoryModel = Schema({
+const ConfigModel = Schema({
   info: [{
     label: String,
     data: String
@@ -17,4 +17,4 @@ const CategoryModel = Schema({
   }
 });
 
-export default model('Category', CategoryModel);
+export default model('Config', ConfigModel);
