@@ -31,7 +31,7 @@ export default {
 
   async Get() {
     try {
-      return ConfigModel.FindOne().exec();
+      return ConfigModel.findOne().exec();
     } catch (error) {
       throw error;
     }
