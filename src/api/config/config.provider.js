@@ -1,6 +1,6 @@
 'use strict';
 
-import ConfigModel from './category.model';
+import ConfigModel from './config.model';
 
 export default {
 
