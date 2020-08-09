@@ -51,7 +51,7 @@ const OrderModel = Schema({
     updatedAt: 'updated_at',
   },
 });
-OrderModel.plugin(autoIncrement.plugin, {
+OrderModel.plugin(autoIncrement, {
   model: 'Order',
   field: 'orderNumber',
   startAt: 1,
