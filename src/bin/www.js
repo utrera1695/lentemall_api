@@ -8,8 +8,11 @@ var server = createServer(app);
 import {
   connect
 } from 'mongoose';
+
+import autoIncrement from 'mongoose-auto-increment';
+
 const PORT = process.env.PORT || 8000;
-connect(
+var conection = connect(
   'mongodb://lentemall:lentemall2020@ds047355.mlab.com:47355/heroku_9n4w0c7s', {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -25,3 +28,4 @@ connect(
     }
   }
 );
+autoIncrement.initialize(conection)

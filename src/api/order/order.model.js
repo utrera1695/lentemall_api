@@ -1,7 +1,7 @@
 'use strict';
 
 import { Schema, model } from 'mongoose';
-
+import autoIncrement from 'mongoose-auto-increment';
 const OrderModel = Schema(
   {
     status: {
@@ -43,5 +43,10 @@ const OrderModel = Schema(
     },
   }
 );
-
+OrderModel.plugin(autoIncrement.plugin, {
+  model: 'Order',
+  field: 'orderNumber',
+  startAt: 1,
+  incrementBy: 1,
+});
 export default model('Order', OrderModel);
