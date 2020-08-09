@@ -52,12 +52,12 @@ const ProductModel = Schema({
     default: true,
   },
   sizes: [{
-    bridge: String,
-    horizontal: String,
-    vertical: String,
-    diagonal: String,
-    width: String,
-    dipstick: String
+    bridge: Number,
+    horizontal: Number,
+    vertical: Number,
+    diagonal: Number,
+    width: Number,
+    dipstick: Number
   }]
 }, {
   timestamps: {
