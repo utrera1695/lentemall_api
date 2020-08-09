@@ -44,6 +44,15 @@ const OrderModel = Schema({
     type: Number,
     default: 0,
     unique: true
+  },
+  color: String,
+  size: {
+    bridge: Number,
+    horizontal: Number,
+    vertical: Number,
+    diagonal: Number,
+    width: Number,
+    dipstick: Number
   }
 }, {
   timestamps: {
