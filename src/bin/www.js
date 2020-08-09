@@ -7,10 +7,8 @@ var server = createServer(app);
 
 import {
   connect,
-  connection
 } from 'mongoose';
 
-import autoIncrement from 'mongoose-auto-increment';
 
 const PORT = process.env.PORT || 8000;
 connect(
