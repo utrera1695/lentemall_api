@@ -12,7 +12,7 @@ import {
 import autoIncrement from 'mongoose-auto-increment';
 
 const PORT = process.env.PORT || 8000;
-var conection = connect(
+connect(
   'mongodb://lentemall:lentemall2020@ds047355.mlab.com:47355/heroku_9n4w0c7s', {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -25,7 +25,7 @@ var conection = connect(
       server.listen(PORT);
       console.log('Base de datos conectada!');
       console.log('Servidor escuchando por el puerto ' + PORT)
+      autoIncrement.initialize(res)
     }
   }
 );
-autoIncrement.initialize(conection)
