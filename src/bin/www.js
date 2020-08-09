@@ -29,5 +29,3 @@ connect(
     }
   }
 );
-const db = connection;
-autoIncrement.initialize(db)
