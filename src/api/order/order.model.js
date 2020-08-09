@@ -4,7 +4,10 @@ import {
   Schema,
   model
 } from 'mongoose';
-import autoIncrement from 'mongoose-auto-increment';
+import {
+  autoIncrement
+} from 'mongoose-plugin-autoinc';
+
 const OrderModel = Schema({
   status: {
     type: String,
