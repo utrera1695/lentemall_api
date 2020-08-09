@@ -6,7 +6,8 @@ import {
 var server = createServer(app);
 
 import {
-  connect
+  connect,
+  connection
 } from 'mongoose';
 
 import autoIncrement from 'mongoose-auto-increment';
@@ -25,7 +26,8 @@ connect(
       server.listen(PORT);
       console.log('Base de datos conectada!');
       console.log('Servidor escuchando por el puerto ' + PORT)
-      autoIncrement.initialize(res)
     }
   }
 );
+const db = connection;
+autoIncrement.initialize(db)
