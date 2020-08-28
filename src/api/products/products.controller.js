@@ -140,4 +140,28 @@ router.get('/product/brands',
     }
   }
 )
+router.get('/product/Outstanding',
+  /* Listar todos los desarrolladores */
+  async (req, res) => {
+    try {
+      let data = await ProductProvider.getOutstanding()
+      res.status(200).send(data)
+    } catch (error) {
+      console.log(error)
+      res.status(500).send(error)
+    }
+  }
+)
+router.get('/product/recents',
+  /* Listar todos los desarrolladores */
+  async (req, res) => {
+    try {
+      let data = await ProductProvider.getRecents()
+      res.status(200).send(data)
+    } catch (error) {
+      console.log(error)
+      res.status(500).send(error)
+    }
+  }
+)
 export default router;

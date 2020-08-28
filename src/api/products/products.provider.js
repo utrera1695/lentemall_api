@@ -110,5 +110,21 @@ export default {
     } catch (error) {
       throw error;
     }
+  },
+  async getOutstanding() {
+    try {
+      return await ProductModel.find({
+        outstanding: true
+      }).limit(8).exec();
+    } catch (error) {
+      throw error;
+    }
+  },
+  async getRecents() {
+    try {
+      return await ProductModel.find().sort('created_at').limit(8).exec();
+    } catch (error) {
+      throw error;
+    }
   }
 };

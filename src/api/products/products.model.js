@@ -58,7 +58,13 @@ const ProductModel = Schema({
     diagonal: Number,
     width: Number,
     dipstick: Number
-  }]
+  }],
+  material: String,
+  shape: String,
+  outstanding: {
+    type: Boolean,
+    default: false
+  }
 }, {
   timestamps: {
     createdAt: 'created_at',
