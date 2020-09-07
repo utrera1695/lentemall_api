@@ -36,5 +36,12 @@ export default {
     } catch (error) {
       throw error
     }
+  },
+  async GetAll() {
+    try {
+      return await CrystalModel.find().exec()
+    } catch (error) {
+      throw error
+    }
   }
 };

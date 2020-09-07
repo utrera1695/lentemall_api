@@ -41,7 +41,18 @@ router.get('/crystal/type',
     }
   }
 )
-
+router.get('/crystal/all',
+  /* Listar todos los desarrolladores */
+  async (req, res) => {
+    try {
+      let data = await crystalProvider.GetAll()
+      res.status(200).send(data)
+    } catch (error) {
+      console.log(error)
+      res.status(500).send(error)
+    }
+  }
+)
 router.delete('/crystal',
   /* Listar todos los desarrolladores */
   async (req, res) => {
