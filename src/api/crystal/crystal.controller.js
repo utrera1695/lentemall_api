@@ -33,7 +33,7 @@ router.get('/crystal/type',
   /* Listar todos los desarrolladores */
   async (req, res) => {
     try {
-      let data = await crystalProvider.GetByType()
+      let data = await crystalProvider.GetByType(req.query.type)
       res.status(200).send(data)
     } catch (error) {
       console.log(error)
