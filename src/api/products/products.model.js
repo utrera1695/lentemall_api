@@ -80,7 +80,11 @@ const ProductModel = Schema({
     type: Schema.Types.ObjectId,
     ref: 'Crystal',
     default: null
-  }]
+  }],
+  formulated: {
+    type: Boolean,
+    default: true
+  }
 }, {
   timestamps: {
     createdAt: 'created_at',
