@@ -32,7 +32,7 @@ export default {
   },
   async Get(id) {
     try {
-      return await ProductModel.findById(id).populate('materials').populate('treatments').exec();
+      return await ProductModel.findById(id).populate('crystals').populate('treatments').exec();
     } catch (error) {
       throw error;
     }
@@ -41,7 +41,7 @@ export default {
     try {
       return await ProductModel.find({
         status: true
-      }).populate('materials').populate('treatments').exec();
+      }).populate('crystals').populate('treatments').exec();
     } catch (error) {
       throw error;
     }
@@ -50,7 +50,7 @@ export default {
     try {
       return await ProductModel.find({
         type: type,
-      }).populate('materials').populate('treatments').exec();
+      }).populate('crystals').populate('treatments').exec();
     } catch (error) {
       throw error;
     }
@@ -60,7 +60,7 @@ export default {
       return await ProductModel.find({
         category: category,
         status: true
-      }).populate('materials').populate('treatments').exec();
+      }).populate('crystals').populate('treatments').exec();
     } catch (error) {
       throw error;
     }
@@ -71,7 +71,7 @@ export default {
         category: category,
         brand: brand,
         status: true
-      }).populate('materials').populate('treatments').exec();
+      }).populate('crystals').populate('treatments').exec();
     } catch (error) {
       throw error;
     }
@@ -97,7 +97,7 @@ export default {
     try {
       return await ProductModel.find({
         status: false
-      }).populate('materials').populate('treatments').exec();
+      }).populate('crystals').populate('treatments').exec();
     } catch (error) {
       throw error;
     }
@@ -106,7 +106,7 @@ export default {
     try {
       return await ProductModel.find({
         stock_status: false
-      }).populate('materials').populate('treatments').exec();
+      }).populate('crystals').populate('treatments').exec();
     } catch (error) {
       throw error;
     }
@@ -115,14 +115,14 @@ export default {
     try {
       return await ProductModel.find({
         outstanding: true
-      }).populate('materials').populate('treatments').limit(8).exec();
+      }).populate('crystals').populate('treatments').limit(8).exec();
     } catch (error) {
       throw error;
     }
   },
   async getRecents() {
     try {
-      return await ProductModel.find().sort('created_at').limit(8).populate('materials').populate('treatments').exec();
+      return await ProductModel.find().sort('created_at').limit(8).populate('crystals').populate('treatments').exec();
     } catch (error) {
       throw error;
     }
