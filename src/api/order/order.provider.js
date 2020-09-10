@@ -3,11 +3,10 @@
 import OrderModel from './order.model';
 
 export default {
-
   async Save(body) {
     try {
       let order = new OrderModel(body);
-      return order.save()
+      return order.save();
     } catch (error) {
       throw error;
     }
@@ -31,7 +30,12 @@ export default {
 
   async ListAll() {
     try {
-      return OrderModel.find().populate('user').populate('product').exec();
+      return OrderModel.find()
+        .populate('user')
+        .populate('crystals')
+        .populate('treatments')
+        .populate('product')
+        .exec();
     } catch (error) {
       throw error;
     }
@@ -39,8 +43,24 @@ export default {
   async ListByUser(user) {
     try {
       return OrderModel.find({
-        user: user
-      }).populate('product').exec();
+        user: user,
+      })
+        .populate('product')
+        .populate('crystals')
+        .populate('treatments')
+        .exec();
+    } catch (error) {
+      throw error;
+    }
+  },
+  async GetById(id) {
+    try {
+      return OrderModel.findById(id)
+        .populate('user')
+        .populate('product')
+        .populate('crystals')
+        .populate('treatments')
+        .exec();
     } catch (error) {
       throw error;
     }

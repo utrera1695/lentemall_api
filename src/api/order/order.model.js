@@ -60,6 +60,10 @@ const OrderModel = Schema({
     type: Schema.Types.ObjectId,
     ref: 'Crystal',
     default: null
+  },
+  formulated: {
+    type: Boolean,
+    default: true
   }
 }, {
   timestamps: {

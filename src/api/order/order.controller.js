@@ -69,4 +69,17 @@ router.get('/order/list/user',
     }
   }
 )
+router.get('/order',
+  /* Listar todos los desarrolladores */
+  async (req, res) => {
+    try {
+      let id = req.query.id
+      let data = await OrderProvider.GetById(id)
+      res.status(200).send(data)
+    } catch (error) {
+      console.log(error)
+      res.status(500).send(error)
+    }
+  }
+)
 export default router;
