@@ -12,7 +12,7 @@ import {
 
 const PORT = process.env.PORT || 8000;
 connect(
-  'mongodb://lentemall:lentemall2020@ds047355.mlab.com:47355/heroku_9n4w0c7s', {
+  'mongodb+srv://admin:admin@cluster0.ezm7w.mongodb.net/lentemalldb?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
